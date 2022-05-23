@@ -1,0 +1,9 @@
+---
+title: "RESTful content"
+endpoint: "http://universities.hipolabs.com/search?country=france"
+---
+h1 = current_page.data.title
+ul
+  - data = restful(current_page.data.endpoint)
+  - data.each do |item|
+    li = item[:alpha_two_code]
